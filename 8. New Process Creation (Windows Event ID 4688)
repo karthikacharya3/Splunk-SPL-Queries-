@@ -1,0 +1,15 @@
+# New Process Creation (Windows Event ID 4688)
+
+## objective 
+Monitor process creation events.
+
+spl 
+index=* EventCode=4688
+| stats count by process_name
+| sort -count
+
+## use case 
+SOC analyst use this query to Monitor process creation events.
+
+# Expected output 
+name of the process in the recent one 
