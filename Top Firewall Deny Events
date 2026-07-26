@@ -1,0 +1,18 @@
+#Top Firewall Deny Events
+
+## objective 
+Identify the most frequently blocked connections.
+
+spl 
+index=* vendor_product="Fortinet Firewall" action=blocked
+| stats count by src_ip dest_ip dest_port
+| sort -count
+
+##sample use case 
+SOC analyst use this query to identify the most frequently blocked connections.
+
+## Expected Output 
+src_ip
+dest_ip
+dest_port
+The result in the decending orders 
