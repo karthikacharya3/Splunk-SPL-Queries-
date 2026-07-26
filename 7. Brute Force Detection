@@ -1,0 +1,18 @@
+# Brute Force Detection
+
+## objective 
+Detect repeated failed login attempts that may indicate brute-force activity.
+
+spl 
+index=* EventCode=4625
+| stats count by user src_ip
+| where count>=5
+| sort -count
+
+# use case 
+SOC analyst use this query to detect Brute Force activity 
+
+## Expected output 
+user name 
+src_ip
+more than 5 or equals to 5 attempts will be appeared 
