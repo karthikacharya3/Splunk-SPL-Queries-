@@ -1,0 +1,16 @@
+# Most Active Users
+
+## objective 
+Identify users with the highest login activity.
+
+spl 
+index=* EventCode=4624
+| top limit=10 user
+
+## use case 
+SOC analyst use this query to find or indentify which users are having the high login activity 
+
+# Expected output
+top 10 user 
+user names 
+login success logs  
