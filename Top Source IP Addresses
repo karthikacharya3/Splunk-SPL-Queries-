@@ -1,0 +1,14 @@
+#Top Source IP Addresses
+
+##objective
+Find the most active source IPs.
+
+spl 
+index=* vendor_product="Fortinet Firewall"
+| top limit=10 src_ip
+
+## use case 
+SOC anlyst use this spl query to Find the most active source IPs.
+
+## Expected output 
+top 10 most active src_ip which all have most frequent activity 
