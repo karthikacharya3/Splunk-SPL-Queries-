@@ -1,0 +1,17 @@
+# Successful Logins Attempts 
+
+## Objective
+Detect successful Windows authentication attempts.
+
+spl query
+index=* EventCode=4624
+| stats count by user src_ip
+| sort -count
+
+## Sample Use Case
+SOC analysts use this query to identify successful logins 
+
+## Expected Output
+•⁠  ⁠Username
+•⁠  ⁠Source IP
+•⁠  ⁠Number of successful attempts 
