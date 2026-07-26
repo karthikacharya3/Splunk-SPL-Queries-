@@ -1,0 +1,11 @@
+ # Large Data Transfer 
+
+ ## objective : To find how much data was exfiltrated from particular src_ip 
+
+ spl
+ index=proxy
+| stats sum(bytes_out) as data_sent by src_ip
+| sort -data_sent
+
+# use case 
+SOC analyst use this query to find out how much data was exfiltrated or tranferred from a particular src_ip 
